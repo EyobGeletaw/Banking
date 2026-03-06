@@ -37,6 +37,7 @@ public class Client extends User {
                     break;
                 case 4:
                     System.out.println("Good Bye!");
+                    break;
                 default:
                     System.out.println("Invalid Input");
             }
