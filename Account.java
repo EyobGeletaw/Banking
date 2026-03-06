@@ -14,6 +14,7 @@ public class Account {
         if (amount > 0) {
             Balance = Balance + amount;
             System.out.println("Deposited " + amount);
+            System.out.println("Your currnet balance is " + Balance);
         } else {
             System.out.println("Invalid amount");
         }
