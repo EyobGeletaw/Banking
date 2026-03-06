@@ -12,4 +12,7 @@ public class User {
         System.out.println("Username: " + username);
         System.out.println("Password: " + password);
     }
+    public String getUsername(){
+        return username;
+    }
 }
