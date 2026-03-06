@@ -5,6 +5,6 @@ public class Main {
                 Client1.showinformation();
         Admin Admin1= new Admin("boss","boss1","1445");
         Admin1.showinformation();
-        Client1.Showmenu();
+        Client1.showMenu();
     }
 }
