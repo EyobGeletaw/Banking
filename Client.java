@@ -11,7 +11,7 @@ public class Client extends User {
         System.out.println("Account Number: "+ account );
 
     }
-    public void Showmenu() {
+    public void showMenu() {
         Scanner input = new Scanner(System.in);
         int choice;
         do {
