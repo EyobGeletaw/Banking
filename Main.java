@@ -1,10 +1,22 @@
-
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        Client Client1 = new Client("Eyob", "Eyoba", "124578", "112546");
-                Client1.showinformation();
-        Admin Admin1= new Admin("boss","boss1","1445");
-        Admin1.showinformation();
-        Client1.showMenu();
+        Bank bank = new Bank();
+        Client client1=new Client("Eyob","eyoba","123qw" , "1452");
+        bank.addClient(client1);
+        Scanner input = new Scanner(System.in);
+        System.out.println("Welcome to Bank Account");
+        System.out.println("Please enter your username");
+        String username = input.nextLine();
+        System.out.println("Please enter your password");
+        String password = input.nextLine();
+        Client Loggedin =bank.login(username,password);
+        if (Loggedin!=null){
+            System.out.println("Welcome you logged in successfully " + Loggedin.getUsername());
+            Loggedin.showMenu();
+        }
+        else{
+            System.out.println("Invalid username or password");
+        }
     }
 }
