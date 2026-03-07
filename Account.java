@@ -23,6 +23,7 @@ public class Account {
             if (amount > 0 && Balance >= amount) {
                 Balance = Balance - amount;
                 System.out.println("Withdrawn " + amount);
+                System.out.println("your current balance is"+ Balance );
             } else {
                 System.out.println("Ivalid amount or insufficient balance");
             }
