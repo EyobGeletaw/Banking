@@ -1,6 +1,6 @@
 public class Account {
     private String AccountNumber;
-    private Double Balance;
+    private Double alance;
     public Account(String AccountNumber)
         {
         this.AccountNumber=AccountNumber;
