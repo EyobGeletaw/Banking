@@ -15,10 +15,10 @@ public class Account {
         if (amount > 0) {
             Balance = Balance + amount;
             System.out.println("Deposited " + amount);
-            System.out.println("Your currnet balance is " + Balance);
+            System.out.println("Your balance " + Balance);
         }
         else {
-            System.out.println("Invalid amount");
+            System.out.println("Invalid deposite amount");
         }
     }
     public void Withdraw(double amount) {
