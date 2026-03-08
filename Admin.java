@@ -38,7 +38,7 @@ public class Admin extends User {
                     input.nextLine();
                     
             }
-        }
+        }do
     }
 }
 
