@@ -3,6 +3,7 @@ public class Main {
     public static void main(String[] args) {
         Bank bank = new Bank();
         Client client1=new Client("Eyob","eyoba","123qw" , "1452");
+        client client2=new Client("mann","njh","kjuy","2345")
         bank.addClient(client1);
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to Bank Account");
