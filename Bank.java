@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Bank {
     private ArrayList<Client> clients = new ArrayList<>();
@@ -11,6 +12,14 @@ public class Bank {
     public Client login(String username, String password) {
         for (Client client : clients) {
             if (client.username.equals(username) && client.password.equals(password)) {
+                return client;
+            }
+        }
+        return null;
+    }
+    public Client findClients(String username) {
+        for (Client client : clients) {
+            if (client.username.equals(username)) {
                 return client;
             }
         }
