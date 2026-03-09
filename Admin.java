@@ -49,6 +49,21 @@ public class Admin extends User {
                         System.out.println("this client doesn't exist");
                         break;
                     }
+                     case 3:
+                    input.nextLine();
+                    System.out.println("client username:");
+                    String userWithdraw =input.nextLine();
+                    Client c2 = bank.findClients(userWithdraw);
+                    if (c2!=null ){
+                    System.out.println("enter the amount please");
+                    double amount = input.nextDouble();
+                    c2.getAccount().Withdraw(amount);
+                        System.out.println("client has been withdrawed"+ amount +  "now the balance is"+ c2.getAccount().getBalance());
+                    }
+                    else{
+                        System.out.println("this client doesn't exist");
+                        break;
+                    }
             }
         }
     }
