@@ -64,6 +64,14 @@ public class Admin extends User {
                         System.out.println("this client doesn't exist");
                         break;
                     }
+                    case 4:
+            input.nextLine();
+            for (Client c : bank.getClients()) {
+                System.out.println(c.getUsername()+c.getAccount()+"balance is"+ c.getAccount().getBalance());}
+            break;
+            default:
+                System.out.println("Invalid choice" );;
+                break;
             }
         }
     }
