@@ -73,7 +73,7 @@ public class Admin extends User {
                 System.out.println("Invalid choice" );;
                 break;
             }
-        }
+        }while(choice!=5);
     }
 }
 
