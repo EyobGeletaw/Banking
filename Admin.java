@@ -12,7 +12,7 @@ public class Admin extends User {
         Scanner input = new Scanner(System.in);
         int choice;
         do {
-            System.out.println("show menu for banking purposes");
+            System.out.println("----show menu for banking purposes----");
             System.out.println("1. Create Client");
             System.out.println("2.Deposit money");
             System.out.println("3.Withdraw money");
@@ -29,12 +29,12 @@ public class Admin extends User {
                     System.out.println("client password:");
                     String password = input.nextLine();
                     System.out.println("client Account Number:");
-                    String account = input.nextInt();
+                    String account = input.nextLine();
                     Client client = new  Client(name,username,password,account);
                     bank.addClient(client);
                     System.out.println("client has been created");
                     break;
-               case 2:
+                case 2:
                     input.nextLine();
                     System.out.println("client username:");
                     String userDepotsit =input.nextLine();
@@ -49,7 +49,7 @@ public class Admin extends User {
                         System.out.println("this client doesn't exist");
                         break;
                     }
-                     case 3:
+                case 3:
                     input.nextLine();
                     System.out.println("client username:");
                     String userWithdraw =input.nextLine();
@@ -64,7 +64,8 @@ public class Admin extends User {
                         System.out.println("this client doesn't exist");
                         break;
                     }
-                    case 4:
+
+            case 4:
             input.nextLine();
             for (Client c : bank.getClients()) {
                 System.out.println(c.getUsername()+c.getAccount()+"balance is"+ c.getAccount().getBalance());}
@@ -73,7 +74,8 @@ public class Admin extends User {
                 System.out.println("Invalid choice" );;
                 break;
             }
-        }while(choice!=5);
-    }
+    } while(choice!=5);
 }
+}
+
 
