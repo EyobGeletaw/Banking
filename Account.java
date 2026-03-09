@@ -15,7 +15,7 @@ public class Account {
     public void Deposit(double amount) {
         if (amount > 0) {
             Balance = Balance + amount;
-            System.out.println("Deposited " + amount);
+            System.out.println("You Deposited " + amount);
             System.out.println("Your currnet balance is " + Balance);
         }
         else {
