@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 public class Bank {
     private ArrayList<Client> clients = new ArrayList<>();
     public void addClient(Client client){
