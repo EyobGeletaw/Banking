@@ -34,9 +34,21 @@ public class Admin extends User {
                     bank.addClient(client);
                     System.out.println("client has been created");
                     break;
-                case 2:
+               case 2:
                     input.nextLine();
-                    
+                    System.out.println("client username:");
+                    String userDepotsit =input.nextLine();
+                    Client c1 = bank.findClients(userDepotsit);
+                    if(c1!=null){
+                        System.out.println("enter the amount please");
+                        double amount = input.nextDouble();
+                        c1.getAccount().Deposit(amount);
+                        System.out.println("client has been deposited the balance is"+ c1.getAccount().getBalance());
+                    }
+                    else{
+                        System.out.println("this client doesn't exist");
+                        break;
+                    }
             }
         }
     }
