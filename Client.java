@@ -11,36 +11,25 @@ public class Client extends User {
         System.out.println("Account Number: "+ account );
 
     }
-    public void showMenu() {
-        Scanner input = new Scanner(System.in);
-        int choice;
-        do {
-            System.out.println("1. To Deposit");
-            System.out.println("2.To Withdraw");
-            System.out.println("3. To Check Balance");
-            System.out.println("4. Exit");
-            System.out.println("Enter your choice");
-            choice = input.nextInt();
-            switch (choice) {
-                case 1:
-                    System.out.println("Enter Amount Number");
-                    double depositamount = input.nextDouble();
-                    account.Deposit(depositamount);
-                    break;
-                case 2:
-                    System.out.println("Enter Amount Number");
-                    double withdrawamount = input.nextDouble();
-                    account.Withdraw(withdrawamount);
-                    break;
-                case 3:
-                    System.out.println("Your Balance is" + account.getBalance());
-                    break;
-                case 4:
-                    System.out.println("Good Bye!");
-                    break;
-                default:
-                    System.out.println("Invalid Input");
+   public void showMenu(String Username , String Password, String AccountNumber) {
+        System.out.println("1.Check Balance");
+        System.out.println("2.Transfer Money");
+        System.out.println("3.Exit");
+        Integer choice=input.nextInt();
+        do{
+            switch(choice){
+            case 1:
+                Account account = new Account(AccountNumber);
+                account.getBalance();
+                break;
+                case 2 :
+                    System.out.println("Enter username");
+                    String Usernameto =input.next();
+                    System.out.println("Enter password");
+                    String Passwordto =input.next();
+
+
             }
-        }while (choice!=4);
+        }
     }
 }
