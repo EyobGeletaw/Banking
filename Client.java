@@ -25,7 +25,7 @@ public class Client extends User {
                 case 2 :
                     System.out.println("Enter username");
                     String Usernameto =input.next();
-                    System.out.println("Enter password");
+                    System.out.println("En");
                     String Passwordto =input.next();
 
 
