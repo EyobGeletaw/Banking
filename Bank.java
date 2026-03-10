@@ -33,10 +33,10 @@ public class Bank {
                     to.getAccount().Deposit(amount);
                     from.getAccount().Withdraw(amount);
                 } else () {
-                    System.out.println("you dont have enough balance to transfer");
+                    System.out.println("you dont have enough balance to transfer the money");
                 }
             } else () {
-                System.out.println("incorrect username or password between account");
+                System.out.println("incorrect username or password between accounts");
             }
         }
     }
