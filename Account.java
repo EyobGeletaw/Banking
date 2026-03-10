@@ -14,7 +14,7 @@ public class Account {
     public void Deposit(double amount) {
         if (amount > 0) {
             Balance = Balance + amount;
-            System.out.println("your account has been credited " + amount);
+            System.out.println("your account has been credited by amount" + amount);
             System.out.println("Your current balance is " + Balance);
         }
         else {
@@ -24,7 +24,7 @@ public class Account {
     public void Withdraw(double amount) {
         if (amount > 0 && Balance >= amount) {
             Balance = Balance - amount;
-            System.out.println("your account has been debited" + amount);
+            System.out.println("your account has been debitedby amount " + amount);
             System.out.println("Your current balance is " + Balance);
         }
         else {
