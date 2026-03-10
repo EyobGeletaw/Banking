@@ -36,7 +36,7 @@ public class Bank {
                     System.out.println("you dont have enough balance to transfer");
                 }
             } else () {
-                System.out.println("incorrect username or password between accounts");
+                System.out.println("incorrect username or password between account");
             }
         }
     }
