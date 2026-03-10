@@ -26,4 +26,18 @@ public class Bank {
     public ArrayList<Client> getClients(){
         return clients;
     }
+     public void TransferMoney(Client from, Client to, double amount) {
+        for (Client client : clients) {
+            if (client.username.equals(from.username) && client.password.equals(from.password)) {
+                if (client.getAccount().getBalance() >= amount) {
+                    to.getAccount().Deposit(amount);
+                    from.getAccount().Withdraw(amount);
+                } else () {
+                    System.out.println("you dont have enough balance to transfer");
+                }
+            } else () {
+                System.out.println("incorrect username or password between accounts");
+            }
+        }
+    }
 }
