@@ -30,6 +30,7 @@ public class Client extends User {
                     String Passwordto =input.next();
 
                 case 3:
+                case 4:
             }
         }
     }
