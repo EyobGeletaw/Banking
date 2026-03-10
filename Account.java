@@ -10,13 +10,12 @@ public class Account {
     }
     public double getBalance(){
             return Balance;
-
     }
     public void Deposit(double amount) {
         if (amount > 0) {
             Balance = Balance + amount;
-            System.out.println("You Deposited " + amount);
-            System.out.println("Your currnet balance is " + Balance);
+            System.out.println("your account has been credited " + amount);
+            System.out.println("Your current balance is " + Balance);
         }
         else {
             System.out.println("Invalid amount");
@@ -25,7 +24,8 @@ public class Account {
     public void Withdraw(double amount) {
         if (amount > 0 && Balance >= amount) {
             Balance = Balance - amount;
-            System.out.println("Withdrawn " + amount);
+            System.out.println("your account has been debited" + amount);
+            System.out.println("Your current balance is " + Balance);
         }
         else {
             System.out.println("Invalid amount or insufficient balance");
