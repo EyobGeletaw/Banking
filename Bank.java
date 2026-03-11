@@ -32,6 +32,8 @@ public class Bank {
         if (senderClient == null) {
             System.out.println("sender client doesn't exist");
         }
-     
+     if (rceiverClient == null) {
+            System.out.println("rceiver client doesn't exist");
+        }
     }
 }
