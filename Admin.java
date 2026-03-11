@@ -75,7 +75,6 @@ public class Admin extends User {
                 break;
             }
     } while(choice!=5);
-        Doing my work
 }
 }
 
