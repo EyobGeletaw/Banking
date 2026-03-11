@@ -2,35 +2,45 @@ import java.util.Scanner;
 
 public class Client extends User {
     private Account account;
-    public Client(String Name, String Username , String Password,String AccountNumber) {
+    private Bank bank;
+    public Client(String Name, String Username , String Password,String AccountNumber,Bank bank) {
         super(Name,Username,Password);
         this.account = new Account(AccountNumber);
     }
-    public void showinformation() {
-        super.showinformation();
+    @Override
+    public void showInformation() {
+        super.showInformation();
         System.out.println("Account Number: "+ account );
-
     }
-   public void showMenu(String Username , String Password, String AccountNumber) {
+    public Double seeBalance(Account account) {
+        return account.getBalance();
+    }
+    public Account  getAccount() {
+        return account;
+    }
+    Scanner input = new Scanner(System.in);
+    public void showMenu() {
         System.out.println("1.Check Balance");
         System.out.println("2.Transfer Money");
-       System.out.println("3.See Transactioins")
-        System.out.println("4.Exit");
+        System.out.println("3.Exit");
         Integer choice=input.nextInt();
         do{
             switch(choice){
-            case 1:
-                Account account = new Account(AccountNumber);
+            case 1: 
                 account.getBalance();
                 break;
                 case 2 :
-                    System.out.println("Enter username");
-                    String Usernameto =input.next();
-                    System.out.println("Engterduytdyjkgf");
-                    String Passwordto =input.next();
-
-              
+                    System.out.println("Enter username that you want to tranfer to");
+                    String usernameto =input.next();
+                    System.out.println("Enter the amount you want to transfer");
+                    double amount = input.nextDouble();
+                    bank.TransferMoney(this.username,usernameto,amount);
+                    break;
+                    case 3:
+                        System.out.println("Exit Program");
+                        break;
             }
-        }
+        }while(choice!=3);
     }
 }
+
