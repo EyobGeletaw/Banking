@@ -35,5 +35,7 @@ public class Bank {
      if (rceiverClient == null) {
             System.out.println("rceiver client doesn't exist");
         }
+          Account senderAccount= senderClient.getAccount();
+        Account rceiverAccount= rceiverClient.getAccount();
     }
 }
