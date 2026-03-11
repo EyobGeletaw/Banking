@@ -37,5 +37,10 @@ public class Bank {
         }
           Account senderAccount= senderClient.getAccount();
         Account rceiverAccount= rceiverClient.getAccount();
+           if (senderAccount.getBalance()>amount){
+            senderAccount.Withdraw(amount);
+            rceiverAccount.Deposit(amount);
+
+        }
     }
 }
