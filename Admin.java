@@ -12,7 +12,7 @@ public class Admin extends User {
         Scanner input = new Scanner(System.in);
         int choice;
         do {
-            System.out.println("----show menu for banking purposes----");
+            System.out.println("----show menu for banking purposes-----");
             System.out.println("1. Create Client");
             System.out.println("2.Deposit money");
             System.out.println("3.Withdraw money");
