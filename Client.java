@@ -29,8 +29,7 @@ public class Client extends User {
                     System.out.println("En");
                     String Passwordto =input.next();
 
-                case 3:
-                case 4:
+              
             }
         }
     }
