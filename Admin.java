@@ -46,7 +46,7 @@ public class Admin extends User {
                         System.out.println("client has been deposited the balance is"+ c1.getAccount().getBalance());
                     }
                     else{
-                        System.out.println("this client doesn't exist");
+                        System.out.println("This client doesn't exist");
                         break;
                     }
                 case 3:
