@@ -27,6 +27,11 @@ public class Bank {
         return clients;
     }
      public void TransferMoney(Client from, Client to, double amount) {
+            Client senderClient = findClients(from);
+        Client rceiverClient = findClients(to);
+        if (senderClient == null) {
+            System.out.println("sender client doesn't exist");
+        }
      
     }
 }
