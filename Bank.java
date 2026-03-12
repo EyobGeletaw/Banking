@@ -49,7 +49,6 @@ public class Bank {
             System.out.println("Transfer successful");
         }
         else{
-            System.out.println("Transfer failed insufficient balance");
     }
 }
     import java.util.ArrayList;
