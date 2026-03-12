@@ -7,7 +7,6 @@ public class Client extends User {
         super(Name,Username,Password);
         this.account = new Account(AccountNumber);
     }
-    @Override
     public void showInformation() {
         super.showInformation();
         System.out.println("Account Number: "+ account );
