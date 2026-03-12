@@ -12,6 +12,5 @@ private double amount;
   public void printTransactions(){
     System.out.println(type+" | From "+fromUsername+" |To "+toUsername+" |Amount "+amount);
 }
-  system.out.println("Transactions done")
 }
 
