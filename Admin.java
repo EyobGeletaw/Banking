@@ -12,7 +12,7 @@ public class Admin extends User {
         Scanner input = new Scanner(System.in);
         int choice;
         do {
-            System.out.println("----show menu for banking purposes-----");
+            System.out.println("----show menu for banking purposes----");
             System.out.println("1. Create Client");
             System.out.println("2.Deposit money");
             System.out.println("3.Withdraw money");
@@ -30,25 +30,24 @@ public class Admin extends User {
                     String password = input.nextLine();
                     System.out.println("client Account Number:");
                     String account = input.nextLine();
-                    Client client = new  Client(name,username,password,account);
+                    Client client = new  Client(name,username,password,account,bank);
                     bank.addClient(client);
                     System.out.println("client has been created");
                     break;
                 case 2:
                     input.nextLine();
                     System.out.println("client username:");
-                    String userDepotsit =input.nextLine();
-                    Client c1 = bank.findClients(userDepotsit);
+                    String userDeposit =input.nextLine();
+                    Client c1 = bank.findClients(userDeposit);
                     if(c1!=null){
                         System.out.println("enter the amount please");
                         double amount = input.nextDouble();
                         c1.getAccount().Deposit(amount);
-                        System.out.println("client has been deposited the balance is"+ c1.getAccount().getBalance());
                     }
                     else{
-                        System.out.println("This client doesn't exist");
-                        break;
+                        System.out.println("this client doesn't exist");
                     }
+                    break;
                 case 3:
                     input.nextLine();
                     System.out.println("client username:");
@@ -58,23 +57,27 @@ public class Admin extends User {
                     System.out.println("enter the amount please");
                     double amount = input.nextDouble();
                     c2.getAccount().Withdraw(amount);
-                        System.out.println("client has been withdrawed"+ amount +  "now the balance is"+ c2.getAccount().getBalance());
                     }
                     else{
                         System.out.println("this client doesn't exist");
                         break;
                     }
-
-            case 4:
-            input.nextLine();
-            for (Client c : bank.getClients()) {
-                System.out.println(c.getUsername()+c.getAccount()+"balance is"+ c.getAccount().getBalance());}
-            break;
-            default:
-                System.out.println("Invalid choice" );;
-                break;
+                case 4:
+                    input.nextLine();
+                    for (Client c : bank.getClients()) {
+                        System.out.println(c.getUsername()+c.getAccount()+"balance is"+ c.getAccount().getBalance());
+                    }
+                    break;
+                    default:
+                        System.out.println("Invalid choice" );;
+                        break;
             }
     } while(choice!=5);
+}
+public void showAllTransactions(){
+        for ( Transactions t : bank.getTransactions()){
+            t.printTransactions();
+        }
 }
 }
 
