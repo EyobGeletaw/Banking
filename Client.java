@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class Client extends User {
     private Account account;
     private Bank bank;
-    public Client(String Name, String Username , String Password,String AccountNumber,Bank bank) {
-        super(Name,Username,Password);
+    public Client(String Name, String username , String Password,String AccountNumber,Bank bank) {
+        super(Name,username,Password);
         this.account = new Account(AccountNumber);
     }
     @Override
@@ -22,25 +22,28 @@ public class Client extends User {
     public void showMenu() {
         System.out.println("1.Check Balance");
         System.out.println("2.Transfer Money");
-        System.out.println("3.Exit");
+        System.out.println("3.See Recent Transactions");
+        System.out.println("4.Exit");
         Integer choice=input.nextInt();
-        do{
-            switch(choice){
-            case 1: 
-                account.getBalance();
-                break;
-                case 2 :
+        do {
+            switch (choice) {
+                case 1:
+                    account.getBalance();
+                    break;
+                case 2:
                     System.out.println("Enter username that you want to tranfer to");
-                    String usernameto =input.next();
+                    String usernameto = input.next();
                     System.out.println("Enter the amount you want to transfer");
                     double amount = input.nextDouble();
-                    bank.TransferMoney(this.username,usernameto,amount);
+                    bank.TransferMoney(this.username, usernameto, amount);
                     break;
-                    case 3:
-                        System.out.println("Exit Program");
-                        break;
+                case 3:
+                    bank.showClientsTransaction(this.username);
+                case 4:
+                    System.out.println("Exit Program");
+                    break;
             }
-        }while(choice!=3);
+        }while(choice!=4);
     }
 }
 
