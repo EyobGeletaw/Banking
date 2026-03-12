@@ -9,3 +9,8 @@ private double amount;
     this.toUsername=toUsername;
     this.amount=amount;
 }
+  public void printTransactions(){
+    System.out.println(type+" | From "+fromUsername+" |To "+toUsername+" |Amount "+amount);
+}
+}
+
