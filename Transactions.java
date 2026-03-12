@@ -12,6 +12,6 @@ private double amount;
   public void printTransactions(){
     System.out.println(type+" | From "+fromUsername+" |To "+toUsername+" |Amount "+amount);
 }
-  system.out.println(" are done carefully")
+  system.out.println(" Trasactions methods are done carefully")
 }
 
