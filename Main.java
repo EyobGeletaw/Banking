@@ -25,3 +25,10 @@ public class Main {
             Loggedin.showMenu();
         }
 }
+    r input = new Scanner(System.in);
+        String answer = input.nextLine();
+        Client Loggedin =bank.login(username,password);
+        if (Loggedin!=null){
+            System.out.println("Welcome you logged in successfully " + Loggedin.getUsername());
+            Loggedin.showMenu();
+        }
