@@ -16,6 +16,10 @@ public class Main {
                      Loggedin.showMenu();
         }
 c static void main(String[] args) {
+        Bank bank = new Bank();ssword);
+                     Loggedin.showMenu();
+        }
+c static void main(String[] args) {
         Bank bank = new Bank();
         System.out.println("Are you Admin or Client?");
         System.out.println("1.Admin");
