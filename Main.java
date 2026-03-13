@@ -2,53 +2,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Bank bank = new Bank();
-       Bank bank = new Bank();
-        Admin admin=new Admin("Eyolcomelcome to the Bank Application");
-        System.out.println("Are you Admin or Client?");
-        System.out.println("1.Admin");
-        System.out.println("2.Client");
-        Scanner input = new Scanner(System.in);
-        String answer = input.nextLine();
-        Client Loggedin =bank.login(username,password);
-                     Loggedin.showMenu();
-        }
-c static void main(String[] args) {
-        Bank bank = new Bank();
-        System.out.println("1.Admin");
-        System.out.println("2.Client");
-        Scanner input = new Scanner(System.in);
-        String answer = input.nextLine();
-        Client Loggedin =bank.login(username,password);
-                     Loggedin.showMenu();
-        }
-c static void main(String[] args) {
-        Bank bank = new Bank();
-       Bank bank = new Bank();
-        Admin admin=new Admin("Eyob","Eyob","12345",bank);
-        bank.addAdmin(admin);
-
-        if (Loggedin!=null){
-            System.out.println("Welcome you logged in successfully " + Loggedin.getUsername());
-            Loggedin.showMenu();
-        }
-        else{
-            System.out.println("Invalid username or password");
-        }
-    }  if (Loggedin!=null){
-            System.out.println("Welcome you logged in successfully " + Loggedin.getUsername());
-            Loggedin.showMenu();
-        }
-}
-    r input = new Scanner(System.in);
-        String answer = input.nextLine();
-        Client Loggedin =bank.login(username,password);
-        if (Loggedin!=null){
-            System.out.println("Welcome you logged in successfully " + Loggedin.getUsername());
-            Loggedin.showMenu();
-        }
-c static void main(String[] args) {
-        Bank bank = new Bank();
-       Bank bank = new Bank();
         Admin admin=new Admin("Eyob","Eyob","12345",bank);
         bank.addAdmin(admin);
         do
@@ -58,9 +11,35 @@ c static void main(String[] args) {
         System.out.println("2.Client");
         Scanner input = new Scanner(System.in);
         String answer = input.nextLine();
-        Client Loggedin =bank.login(username,password);
-        if (Loggedin!=null){
-            System.out.println("Welcome you logged in successfully " + Loggedin.getUsername());
-            Loggedin.showMenu();
+        if (answer.equals("1")) {
+            System.out.println("Enter your username");
+            String username = input.nextLine();
+            System.out.println("Enter your password");
+            String password = input.nextLine();
+            if(bank.loginAdmin(username,password)!=null){
+                System.out.println("You have successfully logged in");
+                bank.loginAdmin(username,password).showMenu();
+            }
+            else{
+                System.out.println("You have not logged in invalid credentials");
+            }
+
         }
-        
+        else if (answer.equals("2")) {
+            System.out.println("Welcome to the Client's Bank Application");
+            System.out.println("Enter your name");
+            String name = input.nextLine();
+            System.out.println("Enter your username");
+            String username = input.nextLine();
+            System.out.println("Enter your password");
+            String password = input.nextLine();
+            System.out.println("Enter your account number");
+            String accountNumber = input.nextLine();
+            if(bank.login(username,password)!=null){
+            bank.login(username,password).showMenu();}
+        }
+        else{
+            System.out.println("Wrong choice please enter only either 1 or 2");
+        }}while (true);
+
+}}
