@@ -3,9 +3,12 @@ import java.util.Scanner;
 public class Client extends User {
     private Account account;
     private Bank bank;
+    private String AccountNumber;
     public Client(String Name, String username , String Password,String AccountNumber,Bank bank) {
         super(Name,username,Password);
         this.account = new Account(AccountNumber);
+        this.bank = bank;
+        this.AccountNumber=AccountNumber;
     }
     @Override
     public void showInformation() {
@@ -31,7 +34,7 @@ public class Client extends User {
                     account.getBalance();
                     break;
                 case 2:
-                    System.out.println("Enter username that you want to tranfer to");
+                    System.out.println("Enter username that you want to transfer to");
                     String usernameto = input.next();
                     System.out.println("Enter the amount you want to transfer");
                     double amount = input.nextDouble();
