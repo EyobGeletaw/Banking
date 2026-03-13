@@ -20,5 +20,8 @@ public class Main {
         else{
             System.out.println("Invalid username or password");
         }
-    }
+    }  if (Loggedin!=null){
+            System.out.println("Welcome you logged in successfully " + Loggedin.getUsername());
+            Loggedin.showMenu();
+        }
 }
