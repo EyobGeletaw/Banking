@@ -4,9 +4,7 @@ public class Main {
         Bank bank = new Bank();
        Bank bank = new Bank();
         Admin admin=new Admin("Eyob","Eyob","12345",bank);
-        bank.addAdmin(admin);
-        do
-        {System.out.printllcome to the Bank Application");
+        bank.addAdmin(admin);lcome to the Bank Application");
         System.out.println("Are you Admin or Client?");
         System.out.println("1.Admin");
         System.out.println("2.Client");
@@ -16,8 +14,7 @@ public class Main {
                      Loggedin.showMenu();
         }
 c static void main(String[] args) {
-        Bank bank = new Bank();ssword);
-                     Loggedin.showMenu();
+        Bank bank = new Bank();
         }
 c static void main(String[] args) {
         Bank bank = new Bank();
