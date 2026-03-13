@@ -37,7 +37,7 @@ public class Bank {
         Client senderClient = findClients(from);
         Client rceiverClient = findClients(to);
         if (senderClient == null) {
-            System.out.println("sender client doesn't exist");
+            System.out.println("t");
         }
         if (rceiverClient == null) {
             System.out.println("rceiver client doesn't exist");
