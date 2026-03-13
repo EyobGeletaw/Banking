@@ -1,6 +1,5 @@
 import java.sql.SQLOutput;
 import java.util.Scanner;
-
 public class Admin extends User {
     private Bank bank;
     public Admin(String Name, String Username , String Password, Bank bank)
@@ -17,7 +16,8 @@ public class Admin extends User {
             System.out.println("2.Deposit money");
             System.out.println("3.Withdraw money");
             System.out.println("4.View Clients");
-            System.out.println("5. Exit");
+            System.out.println("5.View all Transactions");
+            System.out.println("6. Exit");
             choice = input.nextInt();
             switch (choice) {
                 case 1:
@@ -42,7 +42,7 @@ public class Admin extends User {
                     if(c1!=null){
                         System.out.println("enter the amount please");
                         double amount = input.nextDouble();
-                        c1.getAccount().Deposit(amount);
+                        bank.deposit(userDeposit,amount);
                     }
                     else{
                         System.out.println("this client doesn't exist");
@@ -56,7 +56,7 @@ public class Admin extends User {
                     if (c2!=null ){
                     System.out.println("enter the amount please");
                     double amount = input.nextDouble();
-                    c2.getAccount().Withdraw(amount);
+                    bank.withdraw(userWithdraw,amount);
                     }
                     else{
                         System.out.println("this client doesn't exist");
@@ -65,14 +65,20 @@ public class Admin extends User {
                 case 4:
                     input.nextLine();
                     for (Client c : bank.getClients()) {
-                        System.out.println(c.getUsername()+c.getAccount()+"balance is"+ c.getAccount().getBalance());
+                        System.out.println(c.getUsername()+ " |"+c.getAccount().getAccountNumber() +"| balance is  "+ c.getAccount().getBalance());
                     }
                     break;
+                case 5:
+                    showAllTransactions();
+                    break;
+                case 6:
+                    System.out.println("exited program");
+                    System.exit(0);
                     default:
                         System.out.println("Invalid choice" );;
                         break;
             }
-    } while(choice!=5);
+    } while(choice!=6);
 }
 public void showAllTransactions(){
         for ( Transactions t : bank.getTransactions()){
