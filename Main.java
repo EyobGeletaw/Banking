@@ -13,6 +13,14 @@ public class Main {
         Scanner input = new Scanner(System.in);
         String answer = input.nextLine();
         Client Loggedin =bank.login(username,password);
+                     Loggedin.showMenu();
+        }
+c static void main(String[] args) {
+        Bank bank = new Bank();
+       Bank bank = new Bank();
+        Admin admin=new Admin("Eyob","Eyob","12345",bank);
+        bank.addAdmin(admin);
+
         if (Loggedin!=null){
             System.out.println("Welcome you logged in successfully " + Loggedin.getUsername());
             Loggedin.showMenu();
