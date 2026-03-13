@@ -7,18 +7,18 @@ public class User {
         this.username = username;
         this.password = password;
     }
-    protected void showinformation() {
-        System.out.println("Name : " + name);
-        System.out.println("Username : " + username);
-        System.out.println("Password : " + password);
+    protected void showInformation() {
+        System.out.println("Name: " + name);
+        System.out.println("Username: " + username);
+        System.out.println("Password: " + password);
     }
     public String getUsername(){
         return username;
     }
-     public boolean login( String username,String password){
+    public boolean login( String username,String password){
         return  this.username.equals(username) && this.password.equals(password);
     }
-   public void showMenu(){
-
+    public void showMenu(){
     }
+
 }
