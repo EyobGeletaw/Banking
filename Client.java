@@ -13,7 +13,7 @@ public class Client extends User {
     @Override
     public void showInformation() {
         super.showInformation();
-        System.out.println("Account Number: "+ account );
+        System.out.println("Account Numbe: "+ account );
     }
     public Double seeBalance(Account account) {
         return account.getBalance();
