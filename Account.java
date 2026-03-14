@@ -3,7 +3,7 @@ public class Account {
     public Double Balance;
     public Account(String AccountNumber) {
         this.AccountNumber=AccountNumber;
-        this.Balance=0.00;
+        this.Balance=0.0;
     }
     public String getAccountNumber(){
         return AccountNumber;
