@@ -23,7 +23,7 @@ public class Client extends User {
     }
     Scanner input = new Scanner(System.in);
     public void showMenu() {
-        System.out.println("1.Check Balanc");
+        System.out.println("1.Check Balance");
         System.out.println("2.Transfer Money");
         System.out.println("3.See Recent Transactions");
         System.out.println("4.Exit");
