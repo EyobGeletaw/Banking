@@ -8,7 +8,7 @@ public class User {
         this.password = password;
     }
     protected void showInformation() {
-        System.out.println("Name: " + name);
+        System.out.println( " + name);
         System.out.println("Username: " + username);
         System.out.println("Password: " + password);
     }
