@@ -25,7 +25,7 @@ public class Client extends User {
     public void showMenu() {
         System.out.println("1.Check Balance");
         System.out.println("2.Transfer Money");
-        System.out.println("3.See Recent ");
+        System.out.println("3.See Recent Transactions ");
         System.out.println("4.Exit");
         Integer choice=input.nextInt();
         do {
