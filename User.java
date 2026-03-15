@@ -10,7 +10,7 @@ public class User {
     protected void showInformation() {
         System.out.println("Name: " + name);
         System.out.println("Username: " + username);
-        System.out.println(": " + password);
+        System.out.println("Password: " + password);
     }
     public String getUsername(){
         return username;
