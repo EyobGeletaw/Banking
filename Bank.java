@@ -47,7 +47,7 @@ public class Bank {
         if (senderAccount.getBalance()>amount){
             senderAccount.Withdraw(amount);
             rceiverAccount.Deposit(amount);
-            System.out.println("Transfer successfu");
+            System.out.println("Transfer successful");
             Transactions t= new Transactions("Transfer",from,to,amount);
             transactions.add(t);
         }
