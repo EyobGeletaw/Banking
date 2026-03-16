@@ -52,7 +52,7 @@ public class Bank {
             transactions.add(t);
         }
         else{
-            System.out.println("Transfer failed insufficiet balance") ;
+            System.out.println("Transfer failed insufficient balance") ;
     }
 }
 public ArrayList<Transactions> transactions = new  ArrayList<>();
