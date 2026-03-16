@@ -40,7 +40,7 @@ public class Bank {
             System.out.println("sender client doesn't exist");
         }
         if (rceiverClient == null) {
-            System.out.println("rceiver clint doesn't exist");
+            System.out.println("rceiver client doesn't exist");
         }
         Account senderAccount= senderClient.getAccount();
         Account rceiverAccount= rceiverClient.getAccount();
