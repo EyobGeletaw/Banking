@@ -5,7 +5,7 @@ public class Main {
         Admin admin=new Admin("Eyob","Eyob","12345",bank);
         bank.addAdmin(admin);
         do
-        {System.out.println("Welcome to the Bank Application");
+        {System.out.println("Welcom to the Bank Application");
         System.out.println("Are you Admin or Client?");
         System.out.println("1.Admin");
         System.out.println("2.Client");
