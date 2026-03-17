@@ -5,7 +5,7 @@ public class Loan {
     String status;
     public Loan(String username,double amount,String status ){
         this.username=username;
-        this.status=status
+        this.status=status;
     }
 public String getStatus(){
         return status;
