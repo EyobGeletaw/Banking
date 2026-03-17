@@ -64,7 +64,7 @@ public class Bank {
             transactions.add(t);
         }
         else{
-            System.out.println("Transfer failed insufficient balance");
+            System.out.println("Transfer failed insufficien balance");
     }
 }
 public ArrayList<Transactions> transactions = new  ArrayList<>();
