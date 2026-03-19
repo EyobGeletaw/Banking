@@ -15,7 +15,7 @@ public class Main {
             System.out.println("Enter your username");
             String username = input.nextLine();
             System.out.println("Enter your password");
-            String password = input.nextLine()
+            String password = input.nextLine();
             if(bank.loginAdmin(username,password)!=null){
                 System.out.println("You have successfully logged in");
                 bank.loginAdmin(username,password).showMenu();
