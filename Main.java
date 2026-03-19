@@ -7,7 +7,7 @@ public class Main {
         do
         {System.out.println("Welcome to the Bank Application");
         System.out.println("Are you Admin or Client?");
-        System.out.println("1.Admin");
+        System.out.println("1.Admin")
         System.out.println("2.Client");
         Scanner input = new Scanner(System.in);
         String answer = input.nextLine();
