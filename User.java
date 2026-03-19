@@ -13,7 +13,7 @@ public class User {
         System.out.println("Password: " + password);
     }
     public String getUsername(){
-        return username;
+        return username
     }
     public boolean login( String username,String password){
         return  this.username.equals(username) && this.password.equals(password);
