@@ -19,7 +19,7 @@ public class Client extends User {
         return account.getBalance();
     }
     public Account  getAccount() {
-        return account;
+        return account
     }
     Scanner input = new Scanner(System.in);
     public void showMenu() {
