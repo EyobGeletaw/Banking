@@ -20,6 +20,5 @@ public class User {
     }
     public void showMenu(){
     }
+
 }
-
-
