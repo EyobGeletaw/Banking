@@ -14,7 +14,7 @@ public class Account {
     public void Deposit(double amount) {
         if (amount > 0) {
             Balance = Balance + amount;
-            System.out.println("your account has been credited  " + amount);
+            System.out.println("your account has been credited " + amount);
             System.out.println("Your current balance is " + Balance);
         }
         else {
@@ -31,4 +31,11 @@ public class Account {
             System.out.println("Invalid amount or insufficient balance");
         }
     }
+    public void addacceptedloantoaccount(Double amount){
+        Balance+=amount;
+    }
+    public void payrecievedloanfromaccount(Double amount){
+        Balance-=amount;
+    }
+
 }
