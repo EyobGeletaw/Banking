@@ -62,6 +62,7 @@ public class Bank {
             System.out.println("Transfer successful");
             Transactions t= new Transactions("Transfer",from,to,amount);
             transactions.add(t);
+            senderClient.updateCreditScore(from,amount*0.05);
         }
         else{
             System.out.println("Transfer failed insufficient balance");
@@ -78,6 +79,8 @@ public void deposit(String username, double amount) {
             Transactions t = new Transactions("Deposit","Cash",username,amount);
             transactions.add(t);
             totalBankBalance+=amount;
+            client.updateCreditScore(username,amount*0.05);
+
 }
 }
 public void withdraw(String username, double amount) {
@@ -87,8 +90,11 @@ public void withdraw(String username, double amount) {
             Transactions t = new Transactions("Withdraw",username,"Cash",amount);
             transactions.add(t);
             totalBankBalance-=amount;
+            client.updateCreditScore(username,amount*0.03);
         }
+
 }
+
 public void showClientsTransaction(String username) {
         for (Transactions t : transactions) {
         if (t.getFromUsername().equals(username)||t.getToUsername().equals(username)) {
@@ -113,22 +119,103 @@ public Double bankBalance(){
 public Double totalAvailableLoan=totalBankBalance/2;
 public  Double bankAvailableLoan(){
     return totalAvailableLoan;
+}
 
+public ArrayList<Loan> listOfTotalAppliedLoans =new ArrayList<>();
+public void addAppliedLoans(Loan loan) {
+    listOfTotalAppliedLoans.add(loan);
 }
-public ArrayList<Loan> listOfLoans =new ArrayList<>();
-public void addLoan(Loan loan) {
-    listOfLoans.add(loan);
+public ArrayList<Loan> getListOfTotalLoansLoans() {
+    return listOfTotalAppliedLoans;
 }
-public ArrayList<Loan> getLoans() {
-    return listOfLoans;
-}
-public ArrayList<Loan> activeLoans =new ArrayList<>();
-public ArrayList<Loan> getActiveLoans() {
-    for(Loan loan : listOfLoans){
-        if (loan.getStatus()=="Accepted"){
-            activeLoans.add(loan);
+public Loan getLoan(String username) {
+    for (Loan loan : listOfTotalAppliedLoans) {
+        if (loan.getUsername().equals(username)) {
+            return loan;
         }
     }
+    return null;
+}
+public ArrayList<Loan> activeLoans =new ArrayList<>();
+public ArrayList<Loan> getActiveLoans(){
     return activeLoans;
 }
+public boolean findactiveLoans(String username) {
+    for(Loan loan2 :getActiveLoans()){
+        if (username.equals(loan2.getUsername())){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    return false;
 }
+public Loan getActiveLoan(String username) {
+    for (Loan loan2 : getActiveLoans()){
+        if (username.equals(loan2.getUsername())){
+            return loan2;
+        }
+    }
+    return null;
+}
+
+public ArrayList<Loan> rejectedLoans =new ArrayList<>();
+public ArrayList<Loan> getRejectedLoans(){
+    return rejectedLoans;
+}
+public Loan getTheLoan(String username) {
+    for (Loan loan : listOfTotalAppliedLoans) {
+        if (loan.getUsername().equals(username)) {
+            return loan;
+        }
+    }
+    return null;
+}
+
+public boolean eligibleLoan(Loan loan) {
+    Client client = findClients(loan.getUsername());
+    if (client!=null){
+        if (client.eligibleLoanAmount()>=loan.getAmount()&bankAvailableLoan()>=loan.getAmount()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    return false;
+}
+public void Accept_Reject_Loan(Loan loan) {
+    if (getTheLoan(loan.getUsername()) != null) {
+        if (eligibleLoan(loan)) {
+            System.out.println("Loan Accepted");
+            activeLoans.add(loan);
+            DepositLoan(loan);
+        } else {
+            System.out.println("Loan Rejected");
+            rejectedLoans.add(loan);
+        }
+    }
+}
+public void DepositLoan(Loan loan) {
+    findClients(loan.getUsername()).getAccount().addacceptedloantoaccount(loan.getAmount());
+    totalBankBalance-=loan.getAmount();
+}
+public void repayLoan(Loan loan) {
+    findClients(loan.getUsername()).getAccount().payrecievedloanfromaccount(loan.getAmount());
+    totalBankBalance+=loan.getAmount();
+    activeLoans.remove(loan);
+}
+public void statusOfLoan(String username) {
+    if (findactiveLoans(username)){
+    System.out.println("Loan Accepted");
+    }
+    else if (username.equals(getTheLoan(username).getUsername())){
+        System.out.println("Loan Pending");
+    }
+    else{
+        System.out.println("Loan Rejected");
+    }
+}
+}
+
