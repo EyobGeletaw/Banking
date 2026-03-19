@@ -8,7 +8,7 @@ public class Loan {
         this.status=status;
     }
 public String getStatus(){
-        return status
+        return status;
 }
 }
 
