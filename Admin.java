@@ -11,13 +11,14 @@ public class Admin extends User {
         Scanner input = new Scanner(System.in);
         int choice;
         do {
-            System.out.println("----show menu for banking purposes--");
+            System.out.println("----show menu for banking purposes----");
             System.out.println("1. Create Client");
             System.out.println("2.Deposit money");
             System.out.println("3.Withdraw money");
             System.out.println("4.View Clients");
             System.out.println("5.View all Transactions");
-            System.out.println("6. Exit");
+            System.out.println("6. Accept or Reject Loan ");
+            System.out.println("7. Exit");
             choice = input.nextInt();
             switch (choice) {
                 case 1:
@@ -31,7 +32,7 @@ public class Admin extends User {
                     System.out.println("client Account Number:");
                     String account = input.nextLine();
                     Client client = new  Client(name,username,password,account,bank);
-                    bank.addClient(client);
+                    bank.addClient(username,client);
                     System.out.println("client has been created");
                     break;
                 case 2:
@@ -64,7 +65,7 @@ public class Admin extends User {
                     }
                 case 4:
                     input.nextLine();
-                    for (Client c : bank.getClients()) {
+                    for (Client c : bank.getClients().values()) {
                         System.out.println(c.getUsername()+ " |"+c.getAccount().getAccountNumber() +"| balance is  "+ c.getAccount().getBalance());
                     }
                     break;
@@ -72,13 +73,18 @@ public class Admin extends User {
                     showAllTransactions();
                     break;
                 case 6:
+                    for (Loan loan: bank.getListOfTotalLoansLoans()){
+                        bank.Accept_Reject_Loan(loan);
+                    }
+                    break;
+                case 7:
                     System.out.println("exited program");
                     System.exit(0);
                     default:
                         System.out.println("Invalid choice" );;
                         break;
             }
-    } while(choice!=6);
+    } while(choice!=7);
 }
 public void showAllTransactions(){
         for ( Transactions t : bank.getTransactions()){
