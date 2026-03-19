@@ -16,7 +16,7 @@ public String getFromUsername(){
     return fromUsername;
 }
 public String getToUsername(){
-    return toUsername;
+    return toUsername
 }
 }
 
