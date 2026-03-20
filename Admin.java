@@ -9,7 +9,7 @@ public class Admin extends User {
     }
     public void showMenu(){
         Scanner input = new Scanner(System.in);
-        int choice
+        int choice;
         do {
             System.out.println("----show menu for banking purposes----");
             System.out.println("1. Create Client");
