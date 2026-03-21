@@ -5,7 +5,7 @@ public class Bank {
     private HashMap<String,Client> clients = new HashMap<>();
     private ArrayList<Admin> admins = new ArrayList<>();
     public void addClient(String username,Client client) {
-        clients.put(username,client);
+        clients.put(username,client)
     }
 
     public void removeClient(String username) {
