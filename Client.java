@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.Scanner
 
 public class Client extends User {
     private Account account;
