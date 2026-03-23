@@ -7,9 +7,7 @@ public class Bank {
     public void addClient(String username,Client client) {
         clients.put(username,client);
     }
-   public void removeClient(String username) {
-        clients.remove(username);
-    }
+
     public void addAdmin(Admin admin) {
         admins.add(admin);
     }
