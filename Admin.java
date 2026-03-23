@@ -5,7 +5,7 @@ public class Admin extends User {
     public Admin(String Name, String Username , String Password, Bank bank)
     {
         super(Name, Username , Password);
-        this.bank=bank
+        this.bank=bank;
     }
     public void showMenu(){
         Scanner input = new Scanner(System.in);
