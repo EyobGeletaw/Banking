@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Client extends User {
+        private Account account;
     private Bank bank;
     private String AccountNumber;
     private Double creditScore;
