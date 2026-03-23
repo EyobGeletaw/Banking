@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Client extends User {
     private Bank bank;
     private Account account;
-    
     private String AccountNumber;
     private Double creditScore;
     public Client(String Name, String username , String Password,String AccountNumber,Bank bank) {
