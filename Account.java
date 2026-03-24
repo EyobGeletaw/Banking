@@ -7,8 +7,17 @@ public class Account {
     }
 }
 
-
- 
+public void Deposit(double amount) {
+        if (amount > 0) {
+            Balance = Balance + amount;
+            System.out.println("your account has been credited " + amount);
+            System.out.println("Your current balance is " + Balance);
+        }
+        else {
+            System.out.println("Invalid amount");
+        
+      }
+}
  
     public void Withdraw(double amount) {
         if (amount > 0 && Balance >= amount) {
