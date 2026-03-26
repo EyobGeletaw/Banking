@@ -7,6 +7,7 @@ public class Main {
         bank.addAdmin(admin);
                 bank.addAdmin(admin);
 
+        bank.addAdmin(admin);
 
         do
         {System.out.println("Welcome to the Bank Application");
