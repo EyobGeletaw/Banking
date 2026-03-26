@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.util.HashMap;
 
 public class Bank {
     private HashMap<String,Client> clients = new HashMap<>();
@@ -7,7 +7,7 @@ public class Bank {
     public void addClient(String username,Client client) {
         clients.put(username,client);
     }
-  public void removeClient(String username) {
+    public void removeClient(String username) {
         clients.remove(username);
     }
     public void addAdmin(Admin admin) {
@@ -61,7 +61,7 @@ public class Bank {
             System.out.println("Transfer successful");
             Transactions t= new Transactions("Transfer",from,to,amount);
             transactions.add(t);
-            senderClient.updateCreditScore(from,amount*0.05);
+            senderClient.updateCreditScore(from,0.5);
         }
         else{
             System.out.println("Transfer failed insufficient balance");
@@ -78,7 +78,7 @@ public void deposit(String username, double amount) {
             Transactions t = new Transactions("Deposit","Cash",username,amount);
             transactions.add(t);
             totalBankBalance+=amount;
-            client.updateCreditScore(username,amount*0.05);
+            client.updateCreditScore(username,0.5);
 
 }
 }
@@ -111,7 +111,7 @@ public Integer numberOfTransactions(String username) {
         }
         return numberOfClientTransaction;
 }
-public Double totalBankBalance;
+public Double totalBankBalance=0.0;
 public Double bankBalance(){
     return totalBankBalance;
 }
@@ -179,6 +179,7 @@ public boolean eligibleLoan(Loan loan) {
             return true;
         }
         else{
+            System.out.println(client.eligibleLoanAmount());
             return false;
         }
     }
