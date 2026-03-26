@@ -5,23 +5,26 @@ public class Account {
         this.AccountNumber=AccountNumber;
         this.Balance=0.0;
     }
-}
-
-  public void Deposit(double amount) {
+    public String getAccountNumber(){
+        return AccountNumber;
+    }
+    public double getBalance(){
+            return Balance;
+    }
+    public void showBalance(){
+        System.out.println("Your balance is "+Balance);
+    }
+    public void Deposit(double amount) {
         if (amount > 0) {
             Balance = Balance + amount;
+
             System.out.println("your account has been credited " + amount);
             System.out.println("Your current balance is " + Balance);
         }
         else {
             System.out.println("Invalid amount");
-        
-      }
-}
- 
-
- 
- 
+        }
+    }
     public void Withdraw(double amount) {
         if (amount > 0 && Balance >= amount) {
             Balance = Balance - amount;
