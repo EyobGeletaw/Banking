@@ -1,4 +1,4 @@
-public class Account {    public String AccountNumber;
+public class Account {    
 
     public Double Balance;
     public Account(String AccountNumber) {
