@@ -1,4 +1,5 @@
 public class Account {
+        public String AccountNumber;
     public Double Balance;
     public Account(String AccountNumber) {
         this.AccountNumber=AccountNumber;
