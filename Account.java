@@ -5,9 +5,7 @@ public class Account {
         this.AccountNumber=AccountNumber;
         this.Balance=0.0;
     }
-    public String getAccountNumber(){
-        return AccountNumber;
-    }
+
     public double getBalance(){
             return Balance;
     }
