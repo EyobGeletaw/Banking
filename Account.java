@@ -1,5 +1,4 @@
 public class Account {    
-        public String AccountNumber;
 
     public Account(String AccountNumber) {
         this.AccountNumber=AccountNumber;
