@@ -1,4 +1,3 @@
-import java.util.HashMap;
 
 public class Bank {
     private HashMap<String,Client> clients = new HashMap<>();
