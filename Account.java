@@ -7,9 +7,6 @@ public class Account {
     }    
 
 
-    public void showBalance(){
-        System.out.println("Your balance is "+Balance);
-    }
     public void Deposit(double amount) {
         if (amount > 0) {
             Balance = Balance + amount;
