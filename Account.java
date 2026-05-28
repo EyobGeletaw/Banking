@@ -5,7 +5,6 @@ public class Account {
         this.Balance=0.0;
     }
     }
-
     public void showBalance(){
         System.out.println("Your balance is "+Balance);
     }
